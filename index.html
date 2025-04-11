@@ -24,7 +24,7 @@
             margin: 0;
             overflow-x: hidden;
             position: relative;
-            font-size: 1.2em; /* Augmentation de la taille de la police globale */
+            font-size: 1.2em;
         }
 
         .shooting-star {
@@ -64,7 +64,6 @@
             transform-style: preserve-3d;
             position: relative;
             backdrop-filter: blur(5px);
-            /* Animation au survol supprimée */
         }
 
         h1, h2, h3 {
@@ -73,7 +72,7 @@
             font-family: 'Agency FB', sans-serif;
             border-bottom: 3px solid var(--blood-red);
             position: relative;
-            font-size: 2em; /* Augmentation taille titres */
+            font-size: 2em;
         }
 
         h1::after {
@@ -87,7 +86,7 @@
         }
 
         p, li {
-            font-size: 1.2em; /* Augmentation taille texte */
+            font-size: 1.2em;
         }
 
         ul {
@@ -116,7 +115,7 @@
             overflow: hidden;
             font-family: monospace;
             white-space: pre-wrap;
-            font-size: 1.1em; /* Légère augmentation */
+            font-size: 1.1em;
         }
 
         .code-block::before {
@@ -196,7 +195,7 @@
             position: relative;
         }
 
-       क्सカードノード {
+        .card-node {
             position: relative;
             width: 250px;
             background: linear-gradient(135deg, #1a1a2f 0%, #000013 100%);
@@ -272,6 +271,276 @@
             font-family: 'Amiri', serif;
             line-height: 1.6;
         }
+
+        /* Styles de base pour la compatibilité avec tous les écrans */
+        body {
+            font-size: 16px; /* Taille de base pour une bonne lisibilité */
+            line-height: 1.5; /* Espacement pour la lisibilité */
+        }
+
+        /* Media Query pour tablettes (481px à 768px) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px; /* Réduction du padding */
+            }
+            .page {
+                margin: 1rem auto;
+                padding: 1.5rem;
+                max-width: 100%; /* S'assurer que ça prend toute la largeur */
+                font-size: 14px; /* Réduction légère pour tablettes */
+            }
+            h1, h2, h3 {
+                font-size: 1.5em; /* Titres plus petits */
+            }
+            p, li {
+                font-size: 1em; /* Texte ajusté */
+            }
+            .shooting-star {
+                display: none; /* Désactiver les étoiles filantes sur tablettes */
+            }
+            .widget-container, .dual-container, .card-branches {
+                flex-direction: column; /* Empiler les éléments verticalement */
+                gap: 10px;
+            }
+            .widget-desc, .widget-example, .card-node {
+                min-width: 100%; /* Pleine largeur */
+            }
+            .code-block {
+                font-size: 0.9em; /* Réduction pour éviter le débordement */
+                padding: 10px;
+            }
+            .cards-tree {
+                gap: 15px; /* Réduire l'espacement entre cartes */
+            }
+            .card-node {
+                width: 100%; /* Pleine largeur pour les cartes */
+            }
+            .portal-border {
+                display: none; /* Désactiver l'effet de portail sur tablettes */
+            }
+        }
+
+       /* Media Query pour mobiles (jusqu'à 480px) */
+/* Media Query pour mobiles (jusqu'à 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        background: var(--void-black);
+        background-image: none;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+    .container {
+        padding: 15px;
+        position: relative;
+        height: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .page {
+        margin: 1rem 0;
+        padding: 1.5rem;
+        border-width: 2px;
+        box-shadow: 0 0 15px var(--shadow-purple);
+        font-size: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    h1, h2, h3 {
+        font-size: 1.3em;
+        text-shadow: 0 0 5px var(--neon-blue);
+        word-wrap: break-word;
+        margin-bottom: 15px;
+    }
+    p, li {
+        font-size: 0.95em;
+        word-wrap: break-word;
+        margin: 10px 0;
+    }
+    ul {
+        padding-left: 15px;
+    }
+    li {
+        padding: 12px;
+        margin: 8px 0;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .code-block {
+        font-size: 0.85em;
+        padding: 10px 15px;
+        white-space: pre;
+        overflow-x: auto;
+        max-width: 85%;
+        box-sizing: border-box;
+        background: #00000090;
+        line-height: 1.4;
+        margin: 10px 0 10px 13px;
+        border-radius: 8px;
+    }
+    .shooting-star {
+        display: none;
+    }
+    .widget-container, .dual-container, .card-branches {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .widget-desc, .widget-example, .card-node {
+        min-width: 100%;
+        padding: 4px;
+        max-width: 100%;
+    }
+    .cards-tree {
+        gap: 15px;
+    }
+    .card-node {
+        width: 100%;
+        padding: 1px;
+        box-shadow: 0 0 12px rgba(106, 0, 255, 0.3);
+        transition: all 0.5s ease;
+        margin: 0 auto;
+    }
+    .card-node:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+    }
+    .card-header {
+        font-size: 1em;
+        padding: 10px;
+    }
+    .card-body {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    .card-footer {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+    .card-rank {
+        font-size: 16px;
+        top: 5px;
+        right: 5px;
+    }
+    .card-branches {
+        gap: 20px;
+        justify-content: center;
+    }
+    .portal-border, .gate-effect {
+        display: none;
+    }
+    .floating-text {
+        animation: float 3s ease-in-out infinite;
+    }
+    table {
+        font-size: 0.85em;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 10px 0;
+    }
+    th, td {
+        padding: 8px;
+        min-width: 80px;
+    }
+    .widget-example div[style*="border: 1px dashed var(--neon-blue)"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .widget-example div[style*="width: 100%; max-width: 200px"] {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    #toc ul.responsive-list {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    #toc li {
+        padding: 10px;
+        margin: 5px 0;
+    }
+    /* Footer spécifique */
+    #footer {
+        padding: 0; /* Pas de padding supplémentaire, on utilise celui de .page */
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(10, 10, 18, 0.9);
+        border-top: 2px solid var(--neon-blue);
+        text-align: center;
+    }
+    #footer h2 {
+        font-size: 1.4em;
+        margin: 20px 0;
+        text-shadow: 0 0 3px var(--neon-blue); /* Ombre réduite pour éviter débordement */
+        text-decoration: none; /* Supprimer tout soulignement */
+    }
+    #footer p {
+        font-size: 1em;
+        margin: 15px 0;
+        text-shadow: 0 0 3px var(--neon-blue); /* Ombre réduite */
+        text-decoration: none; /* Supprimer tout soulignement */
+    }
+    #footer div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0; /* Pas de padding supplémentaire */
+    }
+    #footer div[style*="flex: 1"] {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(106, 0, 255, 0.2); /* Ombre réduite */
+    }
+    #footer ul.responsive-list {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    #footer li {
+        padding: 12px;
+        margin: 8px 0;
+        background: rgba(0, 0, 0, 0.5);
+        border-left: 3px solid var(--neon-blue);
+        text-decoration: none; /* Supprimer tout soulignement */
+        box-shadow: none; /* Pas d'ombre sur les li */
+    }
+    #footer p[style*="font-size: 0.9em"] {
+        font-size: 0.95em;
+        margin: 15px 0;
+        animation: float 3s ease-in-out infinite;
+        color: var(--neon-blue);
+        text-shadow: 0 0 3px var(--neon-blue); /* Ombre réduite */
+        text-decoration: none; /* Supprimer tout soulignement */
+    }
+}/* Ajustement spécifique pour très petits écrans (jusqu'à 255px) */
+        @media (max-width: 255px) {
+            body {
+                font-size: 10px; /* Taille minimale pour très petits écrans */
+            }
+            .page {
+                padding: 0.5rem;
+                margin: 0.2rem 0;
+            }
+            h1, h2, h3 {
+                font-size: 1em;
+            }
+            p, li {
+                font-size: 0.8em;
+            }
+            .code-block {
+                font-size: 0.7em;
+            }
+            .card-node {
+                padding: 5px;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Amiri&display=swap" rel="stylesheet">
 </head>
@@ -306,24 +575,53 @@
     <div class="shooting-star" style="left: 78%; animation-delay: 1.65s;"></div>
     <div class="shooting-star" style="left: 88%; animation-delay: 1.85s;"></div>
     <div class="container">
-       <!-- Page de titre -->
-<div class="page floating-text">
-    <h1>Flutter : Un Framework Performant pour le Développement Moderne</h1>
-    <p style="text-align: center; font-size: 1.5em;">
-        <span style="color: var(--blood-red);">Développez vos compétences en programmation</span><br>
-        <em style="font-size: 0.8em;">Par Samah Zahraoui</em>
-    </p>
-    <div class="arabic">
-        <p style="text-align: center; font-size: 1.5em;">
-            <span style="color: var(--blood-red);">عزز مهاراتك في البرمجة</span><br>
-            <em style="font-size: 0.8em;">مع سماح زهراوي</em>
-        </p>
-    </div>
-</div>
+        <!-- Page de titre -->
+        <div class="page floating-text">
+            <h1>Flutter : Un Framework Performant pour le Développement Moderne</h1>
+            <p style="text-align: center; font-size: 1.5em;">
+                <span style="color: var(--blood-red);">Développez vos compétences en programmation</span><br>
+                <em style="font-size: 0.8em;">Par Samah Zahraoui</em>
+            </p>
+            <div class="arabic">
+                <p style="text-align: center; font-size: 1.5em;">
+                    <span style="color: var(--blood-red);">عزز مهاراتك في البرمجة</span><br>
+                    <em style="font-size: 0.8em;">مع سماح زهراوي</em>
+                </p>
+            </div>
+        </div>
+        <!-- Table des matières -->
+        <div class="page" id="toc">
+            <h2>Table des Matières</h2>
+            <h2 class="arabic">جدول المحتويات</h2>
+            <ul class="responsive-list" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+                <li><a href="#introduction" style="color: var(--neon-blue); text-decoration: none;">Introduction: Le Système Flutter</a></li>
+                <li><a href="#what-is-flutter" style="color: var(--neon-blue); text-decoration: none;">Qu'est-ce que Flutter?</a></li>
+                <li><a href="#community" style="color: var(--neon-blue); text-decoration: none;">La Communauté des Développeurs Flutter</a></li>
+                <li><a href="#usage" style="color: var(--neon-blue); text-decoration: none;">Utilisation de Flutter</a></li>
+                <li><a href="#advantages" style="color: var(--neon-blue); text-decoration: none;">Avantages de Flutter</a></li>
+                <li><a href="#challenges" style="color: var(--neon-blue); text-decoration: none;">Défis: Les Obstacles de Flutter</a></li>
+                <li><a href="#glossary" style="color: var(--neon-blue); text-decoration: none;">Glossaire des Termes Principaux</a></li>
+                <li><a href="#widgets" style="color: var(--neon-blue); text-decoration: none;">Arsenal des Widgets</a></li>
+                <li><a href="#widget-text" style="color: var(--neon-blue); text-decoration: none;">Widget Text</a></li>
+                <li><a href="#widget-image" style="color: var(--neon-blue); text-decoration: none;">Widget Image</a></li>
+                <li><a href="#widget-card" style="color: var(--neon-blue); text-decoration: none;">Widget Card</a></li>
+                <li><a href="#widget-column-row" style="color: var(--neon-blue); text-decoration: none;">Widget Column et Row</a></li>
+                <li><a href="#widget-sizedbox" style="color: var(--neon-blue); text-decoration: none;">Widget SizedBox</a></li>
+                <li><a href="#widget-appbar" style="color: var(--neon-blue); text-decoration: none;">Widget AppBar</a></li>
+                <li><a href="#widget-bottom-nav" style="color: var(--neon-blue); text-decoration: none;">Widget BottomNavigationBar</a></li>
+                <li><a href="#widget-textfield" style="color: var(--neon-blue); text-decoration: none;">Widget TextField</a></li>
+                <li><a href="#widget-dropdown" style="color: var(--neon-blue); text-decoration: none;">Widget DropdownButton</a></li>
+                <li><a href="#widget-drawer" style="color: var(--neon-blue); text-decoration: none;">Widget Drawer</a></li>
+                <li><a href="#interactive-cards" style="color: var(--neon-blue); text-decoration: none;">Cartes Interactives</a></li>
+                <li><a href="#installation" style="color: var(--neon-blue); text-decoration: none;">Comment Installer Flutter</a></li>
+                <li><a href="#conclusion" style="color: var(--neon-blue); text-decoration: none;">Conclusion</a></li>
+                <li><a href="#footer" style="color: var(--neon-blue); text-decoration: none;">Contact & Ressources Officielles</a></li>
+            </ul>
+        </div>
 
         <!-- Introduction -->
         <div class="page">
-            <h2>Introduction: Le Système Flutter</h2>
+            <h2 id="introduction">Introduction: Le Système Flutter</h2>
             <h2 class="arabic">مقدمة: نظام فلاتر</h2>
             <p>Plongez dans les profondeurs du développement multiplateforme avec Flutter, un framework qui transforme votre code en outils puissants capables de conquérir simultanément Android, iOS, Web et Desktop. Comme un développeur expert qui maîtrise les paradigmes de programmation, Flutter vous permet de créer des applications exceptionnelles avec une seule base de code.</p>
             <div class="arabic">
@@ -336,7 +634,7 @@
 
         <!-- Qu'est-ce que Flutter -->
         <div class="page">
-            <h2>Qu'est-ce que Flutter?</h2>
+            <h2 id="what-is-flutter">Qu'est-ce que Flutter?</h2>
             <h2 class="arabic">ما هو فلاتر؟</h2>
             <p>Flutter est un SDK (Software Development Kit) open-source créé par Google qui permet de développer des applications multiplateformes avec une seule base de code. Contrairement aux autres frameworks hybrides, Flutter utilise son propre moteur de rendu pour dessiner les interfaces utilisateur, ce qui lui permet d'atteindre des performances proches du natif.</p>
             <div class="arabic">
@@ -344,7 +642,7 @@
             </div>
             <h3>Caractéristiques principales:</h3>
             <h3 class="arabic">الخصائص الرئيسية:</h3>
-            <ul>
+            <ul class="responsive-list">
                 <li>Architecture basée sur des widgets - Tout est widget dans Flutter</li>
                 <li>Langage de programmation Dart - Un langage moderne optimisé pour les applications UI</li>
                 <li>Hot Reload - Visualisez instantanément les modifications apportées au code</li>
@@ -352,7 +650,7 @@
                 <li>Compatibilité multiplateforme - Android, iOS, Web, macOS, Windows, Linux</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li>هندسة تعتمد على الويدجت - كل شيء في فلاتر هو ويدجت</li>
                     <li>لغة البرمجة Dart - لغة حديثة محسنة لتطبيقات واجهة المستخدم</li>
                     <li>إعادة التحميل الفوري - شاهد التعديلات على الشيفرة فورًا</li>
@@ -364,7 +662,7 @@
 
         <!-- Communauté Flutter -->
         <div class="page">
-            <h2>La Communauté des Développeurs Flutter</h2>
+            <h2 id="community">La Communauté des Développeurs Flutter</h2>
             <h2 class="arabic">نقابة مطوري فلاتر</h2>
             <p>Flutter bénéficie d'une communauté vibrante et en pleine croissance, comparable à un réseau de développeurs partageant leurs connaissances et outils.</p>
             <div class="arabic">
@@ -372,7 +670,7 @@
             </div>
             <h3>Ressources de la communauté:</h3>
             <h3 class="arabic">موارد المجتمع:</h3>
-            <ul>
+            <ul class="responsive-list">
                 <li>Flutter Dev - Le portail officiel pour les développeurs</li>
                 <li>Pub.dev - Le registre des packages pour Flutter et Dart</li>
                 <li>Flutter Community - Organisation GitHub avec des packages communautaires</li>
@@ -381,7 +679,7 @@
                 <li>FlutterForce - Conférences et meetups dans le monde entier</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li>Flutter Dev - البوابة الرسمية للمطورين</li>
                     <li>Pub.dev - سجل الحزم لفلاتر وDart</li>
                     <li>Flutter Community - منظمة GitHub تحتوي على حزم مجتمعية</li>
@@ -394,13 +692,13 @@
 
         <!-- Utilisation de Flutter -->
         <div class="page">
-            <h2>Utilisation de Flutter</h2>
+            <h2 id="usage">Utilisation de Flutter</h2>
             <h2 class="arabic">استخدام فلاتر</h2>
             <p>Flutter est utilisé pour développer une variété d'applications, des applications de commerce électronique aux outils mobiles simples. Voici les principaux domaines d'utilisation:</p>
             <div class="arabic">
-                <p>يُستخدم فلاتر لت spielوير مجموعة متنوعة من التطبيقات، من تطبيقات التجارة الإلكترونية إلى الأدوات المحمولة البسيطة. إليك المجالات الرئيسية للاستخدام:</p>
+                <p>يُستخدم فلاتر لتطوير مجموعة متنوعة من التطبيقات، من تطبيقات التجارة الإلكترونية إلى الأدوات المحمولة البسيطة. إليك المجالات الرئيسية للاستخدام:</p>
             </div>
-            <ul>
+            <ul class="responsive-list">
                 <li>Applications mobiles multiplateformes (Android et iOS)</li>
                 <li>Applications web progressives (PWA)</li>
                 <li>Applications de bureau (Windows, macOS, Linux)</li>
@@ -408,7 +706,7 @@
                 <li>Applications IoT pour appareils embarqués</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li>تطبيقات محمولة متعددة المنصات (أندرويد وiOS)</li>
                     <li>تطبيقات ويب تقدمية (PWA)</li>
                     <li>تطبيقات سطح المكتب (ويندوز، macOS، لينكس)</li>
@@ -418,7 +716,7 @@
             </div>
             <h3>Entreprises utilisant Flutter:</h3>
             <h3 class="arabic">الشركات التي تستخدم فلاتر:</h3>
-            <ul>
+            <ul class="responsive-list">
                 <li>Google (Google Ads, Google Pay, Stadia)</li>
                 <li>Alibaba (app principale pour le marché chinois)</li>
                 <li>BMW (application My BMW)</li>
@@ -426,7 +724,7 @@
                 <li>Tencent (plusieurs applications chinoises populaires)</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li>جوجل (Google Ads، Google Pay، Stadia)</li>
                     <li>علي بابا (التطبيق الرئيسي للسوق الصيني)</li>
                     <li>بي إم دبليو (تطبيق My BMW)</li>
@@ -473,13 +771,13 @@ class MonPage extends StatelessWidget {
 
         <!-- Avantages de Flutter -->
         <div class="page">
-            <h2>Avantages de Flutter: Les Atouts Performants</h2>
+            <h2 id="advantages">Avantages de Flutter: Les Atouts Performants</h2>
             <h2 class="arabic">مزايا فلاتر: القدرات العالية</h2>
             <p>Flutter offre plusieurs avantages qui en font un choix populaire pour le développement d'applications multiplateformes:</p>
             <div class="arabic">
                 <p>يوفر فلاتر العديد من المزايا التي تجعله خيارًا شائعًا لتطوير التطبيقات متعددة المنصات:</p>
             </div>
-            <ul>
+            <ul class="responsive-list">
                 <li><b>Une seule base de code</b> - Réduisez le temps de développement et les coûts de maintenance</li>
                 <li><b>Hot Reload</b> - Visualisez instantanément les changements sans perdre l'état actuel de l'application</li>
                 <li><b>Interfaces utilisateur personnalisables</b> - Créez des UI riches et animées avec le système de widgets</li>
@@ -489,7 +787,7 @@ class MonPage extends StatelessWidget {
                 <li><b>Soutien de Google</b> - Mises à jour régulières et développement actif</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li><b>قاعدة شيفرة واحدة</b> - تقليل وقت التطوير وتكاليف الصيانة</li>
                     <li><b>إعادة التحميل الفوري</b> - شاهد التغييرات فورًا دون فقدان الحالة الحالية للتطبيق</li>
                     <li><b>واجهات مستخدم قابلة للتخصيص</b> - أنشئ واجهات غنية ومتحركة بنظام الويدجت</li>
@@ -503,17 +801,17 @@ class MonPage extends StatelessWidget {
 
         <!-- Défis avec Flutter -->
         <div class="page">
-            <h2>Défis: Les Obstacles de Flutter</h2>
+            <h2 id="challenges">Défis: Les Obstacles de Flutter</h2>
             <h2 class="arabic">التحديات: عقبات فلاتر</h2>
             <h3>Défis Techniques:</h3>
             <h3 class="arabic">التحديات التقنية:</h3>
-            <ul>
+            <ul class="responsive-list">
                 <li><b>Correction des erreurs (Debugging)</b> - Certaines erreurs ne sont pas évidentes, surtout celles liées à la synchronisation ou aux interactions entre les packages. Si tu rencontres un problème précis et que tu veux savoir comment le résoudre, dis-le-moi exactement et on détaillera les étapes une par une.</li>
                 <li><b>Performance</b> - Si l'interface n'est pas bien construite ou si la gestion de l'état est mauvaise, cela peut rendre l'application lente ou peu fluide.</li>
                 <li><b>Gestion de l’état (State Management)</b> - C’est l’un des sujets les plus complexes dans Flutter. Il existe plusieurs méthodes comme setState, Provider, Bloc, Riverpod, etc. Choisir la solution la plus adaptée à ton projet peut être difficile.</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li><b>تصحيح الأخطاء (Debugging)</b> - بعض الأخطاء غير واضحة، خصوصًا تلك المتعلقة بالتزامن أو التفاعلات بين الحزم. إذا واجهت تحديًا معينًا حاب تعرف كيف تحله، قولي عليه بالتحديد ونشرح التفاصيل خطوة بخطوة.</li>
                     <li><b>الأداء (Performance)</b> - إذا لم يتم بناء الواجهة بشكل صحيح أو كانت إدارة الحالة سيئة، فقد يؤدي ذلك إلى تطبيق بطيء أو غير سلس.</li>
                     <li><b>إدارة الحالة (State Management)</b> - من أكثر المواضيع تعقيدًا في فلاتر. توجد عدة طرق مثل setState, Provider, Bloc, Riverpod وغيرها، واختيار الأنسب لمشروعك قد يكون صعبًا.</li>
@@ -522,7 +820,7 @@ class MonPage extends StatelessWidget {
             
             <h3>Défis Psychologiques pour les Développeurs:</h3>
             <h3 class="arabic">التحديات النفسية للمطورين:</h3>
-            <ul>
+            <ul class="responsive-list">
                 <li><b>Paradigme différent</b> - Apprendre à penser en termes de widgets et d'arbre de widgets</li>
                 <li><b>Syndrome de l'imposteur</b> - Sentiment d'être dépassé par la quantité de widgets et leurs combinaisons</li>
                 <li><b>Résistance au changement</b> - Difficulté à abandonner les habitudes acquises en développement natif</li>
@@ -530,7 +828,7 @@ class MonPage extends StatelessWidget {
                 <li><b>Choix des packages</b> - Anxiété face à la multitude d'options disponibles</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li><b>نموذج مختلف</b> - تعلم التفكير من حيث الويدجت وشجرة الويدجت</li>
                     <li><b>متلازمة المحتال</b> - الشعور بالإرهاق من كمية الويدجت وتركيباتها</li>
                     <li><b>مقاومة التغيير</b> - صعوبة التخلي عن العادات المكتسبة في التطوير الأصلي</li>
@@ -542,13 +840,13 @@ class MonPage extends StatelessWidget {
 
         <!-- Glossaire des termes principaux -->
         <div class="page">
-            <h2>Glossaire des Termes Principaux: Le Manuel du Développeur</h2>
+            <h2 id="glossary">Glossaire des Termes Principaux: Le Manuel du Développeur</h2>
             <h2 class="arabic">معجم المصطلحات الرئيسية: دليل المطور</h2>
             <p>Comme un développeur doit connaître ses outils, il doit maîtriser son vocabulaire. Voici les définitions des termes clés :</p>
             <div class="arabic">
                 <p>كما يجب على المطور معرفة أدواته، يجب عليه إتقان مفرداته. إليك تعريفات المصطلحات الرئيسية:</p>
             </div>
-            <ul>
+            <ul class="responsive-list">
                 <li><b>POO (Programmation Orientée Objet)</b> : Une méthode de programmation basée sur des "objets" qui combinent données et comportements, comme des composants avec leurs propriétés et méthodes.</li>
                 <li><b>Classes</b> : Modèles ou plans pour créer des objets en POO. Exemple : une classe "Utilisateur" peut définir des propriétés comme "nom" et "email".</li>
                 <li><b>Framework</b> : Une structure préfabriquée (comme Flutter) qui fournit des outils et règles pour développer des applications rapidement, tel un kit prêt à l’emploi.</li>
@@ -560,7 +858,7 @@ class MonPage extends StatelessWidget {
                 <li><b>SDK (Software Development Kit)</b> : Un ensemble d’outils pour développer des applications, comme une boîte à outils pour un programmeur.</li>
             </ul>
             <div class="arabic">
-                <ul>
+                <ul class="responsive-list">
                     <li><b>POO (البرمجة الموجهة للكائنات)</b>: طريقة برمجة تعتمد على "كائنات" تجمع البيانات والسلوكيات، كمكونات بصفاتها ووظائفها.</li>
                     <li><b>الفئات (Classes)</b>: قوالب أو مخططات لإنشاء كائنات في POO. مثال: فئة "مستخدم" قد تحدد خصائص مثل "الاسم" و"البريد الإلكتروني".</li>
                     <li><b>الإطار (Framework)</b>: هيكلية جاهزة (مثل فلاتر) توفر أدوات وقواعد لتطوير التطبيقات بسرعة، كمجموعة أدوات جاهزة.</li>
@@ -576,7 +874,7 @@ class MonPage extends StatelessWidget {
 
         <!-- Widgets Section -->
         <div class="page">
-            <h2>Arsenal des Widgets: Les Outils du Développeur</h2>
+            <h2 id="widgets">Arsenal des Widgets: Les Outils du Développeur</h2>
             <h2 class="arabic">ترسانة الويدجت: أدوات المطور</h2>
             <p>Les widgets sont les éléments fondamentaux de Flutter. Chaque élément d'interface utilisateur est un widget, et les widgets peuvent être combinés pour créer des interfaces complexes.</p>
             <div class="arabic">
@@ -586,61 +884,63 @@ class MonPage extends StatelessWidget {
             <h3 class="arabic">الفرق بين StatelessWidget و StatefulWidget</h3>
             <div class="dual-container">
                 <div class="widget-desc">
-                    <table border="1" style="width: 100%; border-collapse: collapse; color: #e0e0ff;">
-                        <tr>
-                            <th style="padding: 10px; border: 1px solid var(--neon-blue);">Critère</th>
-                            <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatelessWidget</th>
-                            <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatefulWidget</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Définition</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Un widget immuable, qui ne change pas après sa création.</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Un widget dynamique, qui peut changer au fil du temps.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Mise à jour de l'UI</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Ne peut pas être mis à jour après son affichage.</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Peut être mis à jour en appelant setState().</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisation</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisé pour les éléments statiques comme Text, Icon, Image.</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisé pour les éléments interactifs comme TextField, Checkbox, ListView.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Performance</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Plus performant car il ne reconstruit pas son UI.</td>
-                            <td style="padding: 10px; border: 1px solid var(--neon-blue);">Moins performant si mal utilisé, car il reconstruit son UI.</td>
-                        </tr>
-                    </table>
-                    <div class="arabic">
+                    <div style="overflow-x: auto;">
                         <table border="1" style="width: 100%; border-collapse: collapse; color: #e0e0ff;">
                             <tr>
-                                <th style="padding: 10px; border: 1px solid var(--neon-blue);">المعيار</th>
+                                <th style="padding: 10px; border: 1px solid var(--neon-blue);">Critère</th>
                                 <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatelessWidget</th>
                                 <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatefulWidget</th>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">التعريف</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">ويدجت غير قابل للتغيير، لا يتغير بعد إنشائه.</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">ويدجت ديناميكي، يمكن أن يتغير مع مرور الوقت.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Définition</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Un widget immuable, qui ne change pas après sa création.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Un widget dynamique, qui peut changer au fil du temps.</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">تحديث واجهة المستخدم</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">لا يمكن تحديثه بعد عرضه.</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">يمكن تحديثه باستدعاء setState().</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Mise à jour de l'UI</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Ne peut pas être mis à jour après son affichage.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Peut être mis à jour en appelant setState().</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">الاستخدام</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">يُستخدم للعناصر الثابتة مثل Text، Icon، Image.</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">يُستخدم للعناصر التفاعلية مثل TextField، Checkbox، ListView.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisation</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisé pour les éléments statiques comme Text, Icon, Image.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Utilisé pour les éléments interactifs comme TextField, Checkbox, ListView.</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">الأداء</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">أكثر كفاءة لأنه لا يعيد بناء واجهة المستخدم.</td>
-                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">أقل كفاءة إذا أُسيء استخدامه، لأنه يعيد بناء واجهة المستخدم.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Performance</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Plus performant car il ne reconstruit pas son UI.</td>
+                                <td style="padding: 10px; border: 1px solid var(--neon-blue);">Moins performant si mal utilisé, car il reconstruit son UI.</td>
                             </tr>
                         </table>
+                        <div class="arabic">
+                            <table border="1" style="width: 100%; border-collapse: collapse; color: #e0e0ff;">
+                                <tr>
+                                    <th style="padding: 10px; border: 1px solid var(--neon-blue);">المعيار</th>
+                                    <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatelessWidget</th>
+                                    <th style="padding: 10px; border: 1px solid var(--neon-blue);">StatefulWidget</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">التعريف</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">ويدجت غير قابل للتغيير، لا يتغير بعد إنشائه.</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">ويدجت ديناميكي، يمكن أن يتغير مع مرور الوقت.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">تحديث واجهة المستخدم</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">لا يمكن تحديثه بعد عرضه.</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">يمكن تحديثه باستدعاء setState().</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">الاستخدام</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">يُستخدم للعناصر الثابتة مثل Text، Icon، Image.</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">يُستخدم للعناصر التفاعلية مثل TextField، Checkbox، ListView.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">الأداء</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">أكثر كفاءة لأنه لا يعيد بناء واجهة المستخدم.</td>
+                                    <td style="padding: 10px; border: 1px solid var(--neon-blue);">أقل كفاءة إذا أُسيء استخدامه، لأنه يعيد بناء واجهة المستخدم.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -648,7 +948,7 @@ class MonPage extends StatelessWidget {
 
         <!-- Widget Text -->
         <div class="page">
-            <h2>Widget Text</h2>
+            <h2 id="widget-text">Widget Text</h2>
             <h2 class="arabic">ويدجت النص</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -660,13 +960,13 @@ class MonPage extends StatelessWidget {
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>data : Le texte à afficher.</li>
                         <li>style : Personnalise l'apparence du texte (taille, couleur, style).</li>
                         <li>textAlign : Alignement du texte (left, center, right).</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>data: النص المراد عرضه.</li>
                             <li>style: تخصيص مظهر النص (الحجم، اللون، الأسلوب).</li>
                             <li>textAlign: محاذاة النص (يسار، وسط، يمين).</li>
@@ -694,7 +994,7 @@ Text(
 
         <!-- Widget Image -->
         <div class="page">
-            <h2>Widget Image</h2>
+            <h2 id="widget-image">Widget Image</h2>
             <h2 class="arabic">ويدجت الصورة</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -706,13 +1006,13 @@ Text(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>image : Spécifie la source de l'image (AssetImage, NetworkImage).</li>
                         <li>width, height : Définit les dimensions de l'image.</li>
                         <li>fit : Ajuste l'image (cover, contain).</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>image: يحدد مصدر الصورة (AssetImage، NetworkImage).</li>
                             <li>width، height: يحدد أبعاد الصورة.</li>
                             <li>fit: يضبط الصورة (cover، contain).</li>
@@ -720,12 +1020,12 @@ Text(
                     </div>
                     <h3>Types d'images</h3>
                     <h3 class="arabic">أنواع الصور</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>Image locale (assets)</li>
                         <li>Image depuis le réseau</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>صورة محلية (assets)</li>
                             <li>صورة من الشبكة</li>
                         </ul>
@@ -736,8 +1036,8 @@ Text(
 // Image locale (assets)
 Image.asset(
   'assets/images/example.png',
-  width: 200,
-  height: 100,
+  width: 100%,  
+  height: 100px,
   fit: BoxFit.cover,
 )
 
@@ -750,7 +1050,7 @@ Image.network(
 )
                     </div>
                     <div style="margin-top: 20px; text-align: center; border: 1px dashed var(--neon-blue); padding: 10px;">
-                        <div style="width: 200px; height: 100px; background: var(--neon-blue); margin: 0 auto; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 100%; max-width: 200px; height: 100px; background: var(--neon-blue); margin: 0 auto; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
                             <span>Image</span>
                         </div>
                     </div>
@@ -760,7 +1060,7 @@ Image.network(
 
         <!-- Widget Card -->
         <div class="page">
-            <h2>Widget Card</h2>
+            <h2 id="widget-card">Widget Card</h2>
             <h2 class="arabic">ويدجت البطاقة</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -772,13 +1072,13 @@ Image.network(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>child : Contenu de la carte.</li>
                         <li>elevation : Ombre de la carte.</li>
                         <li>shape : Forme de la carte.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>child: محتوى البطاقة.</li>
                             <li>elevation: ظل البطاقة.</li>
                             <li>shape: شكل البطاقة.</li>
@@ -816,7 +1116,7 @@ Card(
 
         <!-- Widget Column et Row -->
         <div class="page">
-            <h2>Widget Column et Row</h2>
+            <h2 id="widget-column-row">Widget Column et Row</h2>
             <h2 class="arabic">ويدجت العمود والصف</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -828,17 +1128,17 @@ Card(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>children : Liste des widgets enfants.</li>
                         <li>mainAxisAlignment : Définit l'alignement des enfants sur l'axe principal.</li>
                         <li>crossAxisAlignment : Définit l'alignement sur l'axe secondaire.</li>
                         <li>mainAxisSize : Définit la taille principale (max ou min).</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>children: قائمة الويدجت الفرعية.</li>
                             <li>mainAxisAlignment: يحدد محاذاة الأبناء على المحور الرئيسي.</li>
-                            <li>crossAxisAlignment: يحدد المحاذاة على المحور الثانوي.</li>
+                            <li>crossAxisAlignment: يحدد المح Yokohamaاة على المحور الثانوي.</li>
                             <li>mainAxisSize: يحدد الحجم الرئيسي (max أو min).</li>
                         </ul>
                     </div>
@@ -886,7 +1186,7 @@ Row(
 
         <!-- Widget SizedBox -->
         <div class="page">
-            <h2>Widget SizedBox</h2>
+            <h2 id="widget-sizedbox">Widget SizedBox</h2>
             <h2 class="arabic">ويدجت SizedBox</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -898,11 +1198,11 @@ Row(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>width, height : Définit la taille de l'espace.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>width، height: يحدد حجم المسافة.</li>
                         </ul>
                     </div>
@@ -920,7 +1220,7 @@ SizedBox(height: 20),
 
         <!-- Widget AppBar -->
         <div class="page">
-            <h2>Widget AppBar</h2>
+            <h2 id="widget-appbar">Widget AppBar</h2>
             <h2 class="arabic">ويدجت AppBar</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -932,13 +1232,13 @@ SizedBox(height: 20),
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>title : Définit le titre de l'AppBar.</li>
                         <li>backgroundColor : Change la couleur de fond.</li>
                         <li>actions : Ajoute des icônes interactives.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>title: يحدد عنوان AppBar.</li>
                             <li>backgroundColor: يغير لون الخلفية.</li>
                             <li>actions: يضيف أيقونات تفاعلية.</li>
@@ -968,7 +1268,7 @@ AppBar(
 
         <!-- Widget BottomNavigationBar -->
         <div class="page">
-            <h2>Widget BottomNavigationBar</h2>
+            <h2 id="widget-bottom-nav">Widget BottomNavigationBar</h2>
             <h2 class="arabic">ويدجت BottomNavigationBar</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -980,13 +1280,13 @@ AppBar(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>items : Définit les éléments du menu.</li>
                         <li>currentIndex : Indique l'élément sélectionné.</li>
                         <li>onTap : Gère les actions lorsqu'un élément est sélectionné.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>items: يحدد عناصر القائمة.</li>
                             <li>currentIndex: يشير إلى العنصر المحدد.</li>
                             <li>onTap: يدير الإجراءات عند اختيار عنصر.</li>
@@ -1020,7 +1320,7 @@ BottomNavigationBar(
 
         <!-- Widget TextField -->
         <div class="page">
-            <h2>Widget TextField</h2>
+            <h2 id="widget-textfield">Widget TextField</h2>
             <h2 class="arabic">ويدجت TextField</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -1032,7 +1332,7 @@ BottomNavigationBar(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>decoration : Ajoute un style avec InputDecoration.</li>
                         <li>keyboardType : Définit le type de clavier.</li>
                         <li>obscureText : Cache le texte (utile pour les mots de passe).</li>
@@ -1041,7 +1341,7 @@ BottomNavigationBar(
                         <li>maxLength : Définit une limite de caractères.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>decoration: يضيف أسلوبًا مع InputDecoration.</li>
                             <li>keyboardType: يحدد نوع لوحة المفاتيح.</li>
                             <li>obscureText: يخفي النص (مفيد لكلمات المرور).</li>
@@ -1078,7 +1378,7 @@ TextField(
 
         <!-- Widget DropdownButton -->
         <div class="page">
-            <h2>Widget DropdownButton</h2>
+            <h2 id="widget-dropdown">Widget DropdownButton</h2>
             <h2 class="arabic">ويدجت DropdownButton</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -1090,13 +1390,13 @@ TextField(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>value : Définit la valeur actuellement sélectionnée.</li>
                         <li>items : Définit les options disponibles.</li>
                         <li>onChanged : Gère l'action lors d'un changement de sélection.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>value: يحدد القيمة المحددة حاليًا.</li>
                             <li>items: يحدد الخيارات المتاحة.</li>
                             <li>onChanged: يدير الإجراء عند تغيير التحديد.</li>
@@ -1123,7 +1423,7 @@ DropdownButton<String>(
 
         <!-- Widget Drawer -->
         <div class="page">
-            <h2>Widget Drawer</h2>
+            <h2 id="widget-drawer">Widget Drawer</h2>
             <h2 class="arabic">ويدجت Drawer</h2>
             <div class="widget-container">
                 <div class="widget-desc">
@@ -1135,14 +1435,14 @@ DropdownButton<String>(
                     </div>
                     <h3>Propriétés principales</h3>
                     <h3 class="arabic">الخصائص الرئيسية</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>child : Contient les éléments du menu.</li>
                         <li>DrawerHeader : Définit l'en-tête du menu.</li>
                         <li>ListTile : Permet d'afficher les éléments de navigation.</li>
                         <li>elevation : Définit l'ombre du Drawer.</li>
                     </ul>
                     <div class="arabic">
-                        <ul>
+                        <ul class="responsive-list">
                             <li>child: يحتوي على عناصر القائمة.</li>
                             <li>DrawerHeader: يحدد رأس القائمة.</li>
                             <li>ListTile: يتيح عرض عناصر التنقل.</li>
@@ -1192,7 +1492,7 @@ Drawer(
 
         <!-- Section Cartes Interactives -->
         <div class="page">
-            <h2>Cartes Interactives: Choisir ses Widgets comme un Développeur</h2>
+            <h2 id="interactive-cards">Cartes Interactives: Choisir ses Widgets comme un Développeur</h2>
             <h2 class="arabic">البطاقات التفاعلية: اختيار ويدجت كمطور</h2>
             <p>Ces cartes en forme de troncs ramifiés vous guident pour choisir entre `child`, `children`, `Row`, `Column`, `Container`, etc., comme un développeur sélectionne ses outils dans un projet.</p>
             <div class="arabic">
@@ -1242,7 +1542,7 @@ Drawer(
         </div>
 
         <div class="page">
-            <h2>Comment Installer Flutter: Votre Outil de Développement</h2>
+            <h2 id="installation">Comment Installer Flutter: Votre Outil de Développement</h2>
             <h2 class="arabic">كيفية تثبيت فلاتر: أداة التطوير الخاصة بك</h2>
             <p>Ce guide ultra-détaillé vous accompagne pour installer et configurer Flutter et Dart afin de créer des applications mobiles.</p>
             <div class="arabic">
@@ -1250,8 +1550,8 @@ Drawer(
             </div>
             <h3>Étapes d'installation :</h3>
             <h3 class="arabic">خطوات التثبيت:</h3>
-            <ul>
-                <ul>
+            <ul class="responsive-list">
+                <ul class="responsive-list">
                     <li><b>Télécharger Flutter SDK</b> : Rendez-vous sur <a href="https://flutter.dev/docs/get-started/install" style="color: var(--neon-blue);">flutter.dev</a>, téléchargez le ZIP pour Windows et extrayez-le dans un dossier (ex. C:\flutter).</li>
                     <li><b>Ajouter au PATH</b> : Copiez C:\flutter\bin, ajoutez-le via Win + R > sysdm.cpl > Variables d’environnement > Path.</li>
                     <li><b>Vérifier</b> : Ouvrez CMD/PowerShell, tapez <code>flutter doctor</code> pour vérifier l’installation.</li>
@@ -1263,7 +1563,7 @@ Drawer(
                     <li><b>Résoudre les problèmes</b> : Si <code>flutter doctor</code> signale des erreurs (ex. absence de Visual Studio Code ou de dépendances), installez les outils manquants et relancez la commande.</li>
                 </ul>
                 <div class="arabic">
-                    <ul>
+                    <ul class="responsive-list">
                         <li><b>تحميل Flutter SDK</b> : توجه إلى <a href="https://flutter.dev/docs/get-started/install" style="color: var(--neon-blue);">flutter.dev</a>، قم بتحميل ملف ZIP لنظام ويندوز واستخرجه في مجلد (مثل C:\flutter).</li>
                         <li><b>إضافة إلى PATH</b> : انسخ C:\flutter\bin، أضفه عبر Win + R > sysdm.cpl > متغيرات البيئة > Path.</li>
                         <li><b>التحقق</b> : افتح CMD/PowerShell، اكتب <code>flutter doctor</code> للتحقق من التثبيت.</li>
@@ -1288,16 +1588,17 @@ Drawer(
                 <!-- Section de liens YouTube -->
                 <h3>Ressources vidéo pour l'installation de Flutter :</h3>
                 <h3 class="arabic">موارد فيديو لتثبيت فلاتر:</h3>
-                <ul>
+                <ul class="responsive-list">
                     <li><a href="https://www.youtube.com/watch?v=fq4N0hgOWzU" style="color: var(--neon-blue);">Flutter - Installation et configuration (Officiel Flutter)</a> - Vidéo officielle en anglais pour débutants.</li>
                     <li><a href="https://www.youtube.com/watch?v=GLSG_Wh_YWc" style="color: var(--neon-blue);">Installer Flutter sur Windows (Tech With Tim)</a> - Tutoriel détaillé en anglais.</li>
                     <li><a href="https://www.youtube.com/watch?v=1gDhl4leEzA" style="color: var(--neon-blue);">Flutter Setup for Beginners (Fireship)</a> - Guide rapide et visuel en anglais.</li>
                     <li><a href="https://www.youtube.com/watch?v=Hr4yk618FKM" style="color: var(--neon-blue);">تثبيت Flutter على ويندوز خطوة بخطوة</a> - Tutoriel en arabe pour Windows.</li>
                 </ul>
         </div>
-           <!-- Conclusion -->
-           <div class="page">
-            <h2>Conclusion: Maîtrisez Flutter et Développez sans Limites</h2>
+
+        <!-- Conclusion -->
+        <div class="page">
+            <h2 id="conclusion">Conclusion: Maîtrisez Flutter et Développez sans Limites</h2>
             <h2 class="arabic">الخاتمة: اتقن فلاتر وطوّر بلا حدود</h2>
             <p>Flutter n’est pas seulement un framework, c’est une porte ouverte vers un monde de possibilités infinies en développement multiplateforme. Avec ses widgets puissants, sa communauté active et ses performances exceptionnelles, vous êtes désormais équipé pour transformer vos idées en applications réelles. Commencez dès aujourd’hui, explorez, et devenez un maître du code !</p>
             <div class="arabic">
@@ -1312,14 +1613,15 @@ Drawer(
                 </p>
             </div>
         </div>
+
         <!-- Footer -->
         <div class="page">
-            <h2>Contact & Ressources Officielles</h2>
+            <h2 id="footer">Contact & Ressources Officielles</h2>
             <p style="text-align: center;">Retrouvez-moi et explorez les ressources essentielles de Flutter !</p>
             <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; margin-top: 20px;">
                 <div style="flex: 1; min-width: 250px;">
                     <h3>Mon Profil</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>
                             <a href="https://www.linkedin.com/in/samah-zahraoui-8948322b1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BZTAakWVVRHq5RqE18q1KZQ%3D%3D" style="color: var(--neon-blue); text-decoration: none;">
                                 LinkedIn - Samah Zahraoui
@@ -1329,7 +1631,7 @@ Drawer(
                 </div>
                 <div style="flex: 1; min-width: 250px;">
                     <h3>Ressources Flutter</h3>
-                    <ul>
+                    <ul class="responsive-list">
                         <li>
                             <a href="https://flutter.dev/" style="color: var(--neon-blue); text-decoration: none;">
                                 Site Officiel de Flutter
@@ -1353,5 +1655,6 @@ Drawer(
             </p>
         </div>
     </div>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92e878171e591d80',t:'MTc0NDM1MzM4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
